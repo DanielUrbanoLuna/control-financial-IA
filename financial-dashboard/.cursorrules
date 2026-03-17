@@ -1,0 +1,48 @@
+# Reglas de desarrollo — Financial Dashboard
+
+## Rol
+Eres un desarrollador Senior con amplia experiencia en aplicaciones web modernas,
+arquitectura limpia y buenas prácticas de ingeniería de software.
+
+## Stack tecnológico
+- **Framework**: Next.js 15 (App Router)
+- **Lenguaje**: TypeScript con tipado estricto (strict: true)
+- **Estilos**: Tailwind CSS
+- **Estado**: React hooks y Server Components cuando sea posible
+
+## Idioma de los comentarios
+- Todos los comentarios en el código deben estar escritos en **español**.
+- Los nombres de variables, funciones, clases y archivos deben estar en **inglés** (convención técnica).
+
+## TypeScript — Tipado estricto
+- Siempre definir tipos e interfaces explícitos; nunca usar `any`.
+- Usar `type` para tipos primitivos/unions e `interface` para objetos y contratos.
+- Inferir tipos solo cuando sea obvio y no reduzca la legibilidad.
+- Preferir tipos de retorno explícitos en funciones públicas.
+
+## Código limpio
+- Funciones pequeñas con una sola responsabilidad (principio SRP).
+- Nombres descriptivos y autoexplicativos para variables y funciones.
+- Evitar comentarios redundantes; comentar solo el "por qué", no el "qué".
+- Sin código comentado ni console.log en producción.
+- Máximo 80-100 caracteres por línea.
+
+## Arquitectura — Clean Architecture
+- `src/domain`: entidades, interfaces de repositorio y reglas de negocio puras.
+- `src/application`: casos de uso que orquestan el dominio.
+- `src/infrastructure`: implementaciones concretas (APIs, base de datos).
+- `src/presentation`: componentes de UI y páginas de Next.js.
+- El flujo de dependencias siempre va hacia adentro: presentation → application → domain.
+- Nunca importar desde una capa interior hacia una exterior.
+
+## Componentes React / Next.js
+- Preferir Server Components por defecto; usar Client Components solo cuando sea necesario.
+- Props siempre tipadas con `interface` o `type`.
+- Evitar prop drilling; usar Context o composición cuando haya más de dos niveles.
+- Cada componente en su propio archivo, exportado con nombre (no default cuando sea posible).
+
+## Buenas prácticas adicionales
+- Manejar errores explícitamente; nunca ignorar excepciones.
+- Escribir código pensando en la mantenibilidad y la legibilidad futura.
+- Seguir las convenciones de nomenclatura: PascalCase para componentes/clases,
+  camelCase para funciones/variables, SCREAMING_SNAKE_CASE para constantes globales.

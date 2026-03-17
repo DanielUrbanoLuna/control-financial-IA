@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+:root {
+  --font-geist-sans: 'Geist Sans', system-ui, sans-serif;
+}
+
+/* Eliminar resaltado azul en tap en móvil */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Scrollbar oscura para mantener coherencia visual */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #2a2a2a;
+  border-radius: 999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #3a3a3a;
+}
+
+/* Reducción de movimiento para accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

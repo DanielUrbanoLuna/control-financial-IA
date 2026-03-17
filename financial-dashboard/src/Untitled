@@ -1,0 +1,1 @@
+Claude, revisa el .gitignore y asegúrate de que .env.local esté excluido para no subir mi API Key
